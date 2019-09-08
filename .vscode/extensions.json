@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "DavidAnson.vscode-markdownlint",
+    "esbenp.prettier-vscode",
+    "eamodio.gitlens",
+    "ban.spellright",
+    "mrmlnc.vscode-remark"
+  ]
+}
