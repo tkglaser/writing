@@ -4,6 +4,7 @@
     "esbenp.prettier-vscode",
     "eamodio.gitlens",
     "ban.spellright",
-    "mrmlnc.vscode-remark"
+    "mrmlnc.vscode-remark",
+    "ms-vscode.theme-markdownkit"
   ]
 }

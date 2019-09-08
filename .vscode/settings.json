@@ -7,5 +7,6 @@
     "plugins": ["markdown"],
     "rules": {}
   },
-  "editor.formatOnSave": true
+  "editor.formatOnSave": true,
+  "workbench.colorTheme": "Markdown Editor Dark"
 }
