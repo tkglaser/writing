@@ -1,8 +1,9 @@
 {
   "spellright.language": ["en"],
   "spellright.documentTypes": ["markdown", "latex", "plaintext"],
-  // "editor.defaultFormatter": "mrmlnc.vscode-remark",
-  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "spellright.recheckOnSave": true,
+  "editor.defaultFormatter": "mrmlnc.vscode-remark",
+  // "editor.defaultFormatter": "esbenp.prettier-vscode",
   "remark.format": {
     "plugins": ["markdown"],
     "rules": {}
