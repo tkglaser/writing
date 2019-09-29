@@ -5,7 +5,8 @@
   "scripts": {
     "start": "concurrently \"nodemon --config nodemon.json\" \"npm run serve\"",
     "serve": "live-server --open=dist/xina2.html --watch=dist/xina2.html",
-    "build": "markdown-pdf -o dist/xina2.pdf src/chapter.*.md"
+    "build": "markdown-pdf -o dist/xina2.pdf src/chapter.*.md",
+    "count": "node ./scripts/countwords.js"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
     "retext-spell": "^3.0.0",
     "retext-syntax-urls": "^1.0.2",
     "retext-usage": "^0.5.0",
-    "unified": "^8.3.2"
+    "unified": "^8.3.2",
+    "words-count": "^1.0.7"
   }
 }

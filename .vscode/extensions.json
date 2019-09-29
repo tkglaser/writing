@@ -5,6 +5,7 @@
     "eamodio.gitlens",
     "ban.spellright",
     "mrmlnc.vscode-remark",
-    "ms-vscode.theme-markdownkit"
+    "ms-vscode.theme-markdownkit",
+    "ms-vscode.wordcount"
   ]
 }

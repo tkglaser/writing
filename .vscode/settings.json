@@ -1,13 +1,15 @@
 {
   "spellright.language": ["en"],
-  "spellright.documentTypes": ["markdown", "latex", "plaintext"],
+  "spellright.ignoreFiles": ["**/.gitignore", "**/.spellignore", "**/characters/**", "**/structure/**"],
+  "spellright.documentTypes": ["markdown"],
   "spellright.recheckOnSave": true,
-  "editor.defaultFormatter": "mrmlnc.vscode-remark",
-  // "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
   "remark.format": {
     "plugins": ["markdown"],
     "rules": {}
   },
   "editor.formatOnSave": true,
-  "workbench.colorTheme": "Markdown Editor Dark"
+  "markdownlint.ignore": ["**/characters/**", "**/structure/**"],
+  "workbench.colorTheme": "Solarized Dark",
+  "window.zoomLevel": 2
 }
