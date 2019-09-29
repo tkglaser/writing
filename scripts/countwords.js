@@ -1,6 +1,6 @@
 const wordsCount = require("words-count");
 const fs = require("fs");
-const { table } = require("table");
+const treeify = require("treeify");
 
 function readDir(dir) {
   return new Promise(resolve => {
@@ -20,29 +20,29 @@ function read(file) {
   });
 }
 
-async function main() {
-  console.log("Word count in src/story");
-  console.log("========");
-  console.log("");
-  const data = [];
-  const config = {
-    columns: {
-      1: {
-        alignment: "right"
-      }
-    },
-    singleLine: true
-  };
-  const files = await readDir("src/story");
+async function countDir(dir) {
+  const files = await readDir(dir);
+  let result = {};
   let totalWords = 0;
   for (const name of files) {
-    const text = await read("src/story/" + name);
-    const words = wordsCount(text);
-    data.push([name, words]);
-    totalWords += words;
+    const dirOrFile = `${dir}/${name}`;
+    if (fs.lstatSync(dirOrFile).isDirectory()) {
+      const subResult = await countDir(dirOrFile);
+      result = { ...result, ...subResult.tree };
+      totalWords += subResult.words;
+    } else {
+      const text = await read(`${dir}/${name}`);
+      const words = wordsCount(text);
+      result[`${name} - [${words}]`] = true;
+      totalWords += words;
+    }
   }
-  data.push(["total", totalWords]);
-  console.log(table(data, config));
+  return { tree: { [`${dir} - [${totalWords}]`]: result }, words: totalWords };
+}
+
+async function main() {
+  let result = (await countDir("src")).tree;
+  console.log(treeify.asTree(result, false));
 }
 
 main();
